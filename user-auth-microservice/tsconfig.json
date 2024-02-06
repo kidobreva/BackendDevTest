@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
       "target": "es6",
+      "types": ["node", "jest"],
       "module": "commonjs",          /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
       "outDir": "./build",           /* Redirect output structure to the directory. */
       "rootDir": "./",               /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */

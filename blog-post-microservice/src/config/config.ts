@@ -26,9 +26,13 @@ const SERVER = {
   },
 };
 
+const AUTH_SERVICE_PATH =
+  process.env.AUTH_SERVICE_PATH || 'http://localhost:3000/auth';
+
 const config = {
   mongo: MONGO,
   server: SERVER,
+  authServicePath: AUTH_SERVICE_PATH,
 };
 
 export default config;
