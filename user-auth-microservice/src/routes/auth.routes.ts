@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import controller from '../controllers/auth.controller';
 import extractJWT from '../middleware/checkUserJWT';
-// import isAuth from '../middleware/auth';
 import registerSchema from '../middleware/validation/register-shema';
 import { validateRequestSchema } from '../middleware/validation/validate-request-shema';
 import loginShema from '../middleware/validation/login-shema';

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "start": "nodemon ./src/app.ts",
+    "startBlog": "nodemon ./src/app.ts",
+    "start": "node dist/app.js",
     "build": "tsc"
   },
   "keywords": [],

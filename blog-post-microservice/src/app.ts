@@ -3,14 +3,11 @@ import postsRoutes from './routes/posts.routes';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import config from './config/config';
-import cors from 'cors';
 
 const app = express();
 
 /** Parse the body of the request */
 app.use(bodyParser.json());
-
-app.use(cors());
 
 /** Routes go here */
 app.use('/blog', postsRoutes);

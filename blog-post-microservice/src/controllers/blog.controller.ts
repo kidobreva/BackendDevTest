@@ -1,18 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { Post } from '../model/blog.model';
 
-const getPostsTest = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  try {
-    return res.status(200).json({ message: 'Token validated' });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 const createPost = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { title, content } = req.body;
@@ -99,7 +87,6 @@ const deletePost = async (req: Request, res: Response, next: NextFunction) => {
 };
 
 export default {
-  getPostsTest,
   createPost,
   getPosts,
   getPostById,

@@ -11,14 +11,12 @@ const MONGO = {
   url: `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.euqcq3d.mongodb.net/?retryWrites=true&w=majority`,
 };
 
-const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
 const SERVER_PORT_AUTH = process.env.SERVER_PORT_AUTH || 1337;
 const SERVER_TOKEN_EXPIRETIME = process.env.SERVER_TOKEN_EXPIRETIME || 60;
 const SERVER_TOKEN_SECRET =
   process.env.SERVER_TOKEN_SECRET || 'encryptedsecret';
 
 const SERVER = {
-  hostname: SERVER_HOSTNAME,
   port_auth: SERVER_PORT_AUTH,
   token: {
     expireTime: SERVER_TOKEN_EXPIRETIME,

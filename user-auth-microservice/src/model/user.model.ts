@@ -8,7 +8,7 @@ export interface IUser extends Document {
   password: string;
 }
 
-// 2. Create a Schema corresponding to the document interface.
+// Create a Schema corresponding to the document interface.
 const userSchema: Schema = new Schema<IUser>(
   {
     firstName: { type: String, required: true },
@@ -32,26 +32,5 @@ userSchema.pre<IUser>('save', async function (next) {
   }
 });
 
-// 3. Create a Model.
+// Create a Model.
 export const User = mongoose.model<IUser>('User', userSchema);
-
-// export default User;
-
-// userSchema.virtual('posts', {
-//   ref: 'Post',
-//   localField: '_id',
-//   foreignField: 'userId',
-//   justOne: false,
-// });
-
-// userSchema.methods.comparePassword = async function (password: string) {
-//     if (!password) {
-//         throw new Error('Invalid username or password');
-//     }
-
-//     try {
-//       return await bcrypt.compare(password, this.password);
-//     } catch (error) {
-//         throw new Error('Invalid username or password');
-//     }
-//   };
