@@ -1,11 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 
-export interface IToken {
-  token: string;
-  signedAt: string;
-}
-
 export interface IUser extends Document {
   firstName: string;
   lastName: string;

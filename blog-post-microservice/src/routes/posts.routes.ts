@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/get', checkUserJWT, controller.getPostsTest);
 router.post(
-  '/create',
+  '/post',
   checkUserJWT,
   postShema,
   validateRequestSchema,
