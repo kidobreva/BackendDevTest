@@ -6,9 +6,9 @@ import { validateRequestSchema } from '../middleware/validation/validate-request
 
 const router = express.Router();
 
-// router.get('/get', checkUserJWT, controller.getPostsTest);
+router.get('/get', checkUserJWT, controller.getPostsTest);
 router.post(
-  '/create',
+  '/post',
   checkUserJWT,
   postShema,
   validateRequestSchema,

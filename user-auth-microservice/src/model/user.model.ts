@@ -1,18 +1,11 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 
-export interface IToken {
-  token: string;
-  signedAt: string;
-}
-
 export interface IUser extends Document {
   firstName: string;
   lastName: string;
   email: string;
   password: string;
-  //   tokens: IToken[];
-  token: string;
 }
 
 // 2. Create a Schema corresponding to the document interface.
@@ -22,8 +15,6 @@ const userSchema: Schema = new Schema<IUser>(
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    // tokens: [{ type: Object }],
-    token: { type: String },
   },
   {
     timestamps: true,

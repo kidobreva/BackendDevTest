@@ -1,23 +1,33 @@
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config/config';
+import axios from 'axios';
 import { Response, Request, NextFunction } from 'express';
 
-const checkUserJWT = (req: Request, res: Response, next: NextFunction) => {
+const checkUserJWT = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   let token = req.headers.authorization?.split(' ')[1];
 
-  if (!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
-  if (token) {
-    jwt.verify(token, config.server.token.secret, (error, decoded) => {
-      if (error) {
-        return res.status(404).json({ message: error.message, error });
-      } else {
-        res.locals.jwt = decoded;
-        next();
-      }
+  try {
+    await axios.get(config.authServicePath, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
+
+    if (token) {
+      const decoded = jwt.verify(
+        token,
+        config.server.token.secret
+      ) as JwtPayload;
+      res.locals.jwt = decoded;
+    }
+
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: 'Unauthorized' });
   }
 };
 
