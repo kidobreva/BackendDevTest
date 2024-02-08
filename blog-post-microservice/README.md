@@ -1,14 +1,19 @@
-## Blog Post Microservice
+## # Blog Post Microservice
 
 # Description
 This microservice manages blog posts for the blogging platform. It supports CRUD operations for blog posts, ensuring that only authenticated users can create, update, or delete their own posts. Post data is stored in a MongoDB database.
 
-# Setup
+# Docker run
+`docker-compose up`
+
+# Setup localy
 Install dependencies:
 `npm install`
 
+Update .env file with the correct AUTH_SERVICE_PATH
+
 Running the Microservice:
-`npm start`
+`npm run start-blog`
 
 The microservice will be running at http://localhost:9090.
 

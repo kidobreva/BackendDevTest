@@ -1,14 +1,17 @@
-## Authentication Microservice
+## # Authentication Microservice
 
 # Description
 This microservice handles user authentication for the blogging platform. It provides endpoints for user registration, login, and logout. User data is stored in a MongoDB database, and JSON Web Tokens (JWT) are used for authentication.
 
-# Setup
+# Docker run
+`docker-compose up`
+
+# Setup localy
 Install dependencies:
 `npm install`
 
 Running the Microservice:
-`npm start`
+`npm run start-auth`
 
 The microservice will be running at http://localhost:3000.
 
