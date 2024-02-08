@@ -7,8 +7,6 @@ services:
     container_name: auth-service
     ports:
       - '3000:3000'
-    networks:
-      - container-net
 
   blog-service:
     build:
@@ -17,9 +15,3 @@ services:
     container_name: blog-service
     ports:
       - '9090:9090'
-    networks:
-      - container-net
-
-networks:
-  container-net:
-    driver: bridge
